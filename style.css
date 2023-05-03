@@ -1,28 +1,36 @@
 @font-face {
-	font-family: 'roslindale';
-	src: url("./fonts/Roslindale-Variable-Display.ttf");
+	font-family: 'gsans';
+	src: url('./fonts/Google-Sans-VF.woff2') format('woff2-variations');
 	font-weight: normal;
 	font-weight: 200 900;
 }
 body {
+	font-family: gsans;
 	font-size: 24px;
 	padding: 40px;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	place-content: center;
-	place-items: center;
-	justify-content: center;
+}
+main {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+form, aside {
+	flex-grow: 1;
 }
 * {
 	font-family: inherit;
 }
 aside {
- flex-grow: 1;
- border-left: 1px solid #e9e9e9;
- padding-left: 120px;
- height: 80%;
  display: grid;
  place-content: center;
+}
+.separator {
+	min-height: 90%;
+	width: 1px;
+	background-color: #e9e9e9;
+	align-self: stretch;
 }
 .fieldset {
 	display: flex;
@@ -34,7 +42,6 @@ aside {
 	margin-bottom: 20px;
 	align-content: center;
 }
-
 
 input[type="text"], textarea {
 	border: 1px solid #121212;
@@ -52,17 +59,13 @@ input[type="file"] {
 	align-items: center;
 	justify-content: center;
 }
-input[type="file"]::before {
-	transform: translateY(-2px) translateX(-2px);
-	content: "Choose a file";
-	display: inline-block;
-	position: absolute;
-	padding: 4px 14px;
-	background-color: #fff;
-	pointer-events: none;
-	border: 1px dotted #121212;
-}
+
 a {
 	font-weight: 580;
 	padding: 16px 20px;
+	color: rgb(0, 68, 205);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
 }
